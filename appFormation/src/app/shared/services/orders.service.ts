@@ -25,4 +25,16 @@ export class OrdersService {
   set collection(col: Observable<Order[]>) {
     this.pCollection = col;
   }
+
+  public getById(orderId: number): Observable<Order> {
+    return this.http.get<Order>(`${this.url}orders/${orderId}`).pipe(
+      map(datas => new Order(datas))
+    );
+  }
+
+  public getById2(orderId: number): Observable<Order> {
+    return this.http.get<Order>(`${this.url}orders?id=${orderId}`).pipe(
+      map(datas => new Order(datas))
+    );
+  }
 }
