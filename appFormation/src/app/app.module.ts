@@ -7,6 +7,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconsModule } from './icons/icons.module';
 import { CoreModule } from './core/core.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +19,8 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     FontAwesomeModule,
     IconsModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
