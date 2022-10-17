@@ -1,2 +1,2 @@
 # angular-octobre-2022
-Angular 3j
+Initiation Angular 3 jours
