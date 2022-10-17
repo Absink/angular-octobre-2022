@@ -58,5 +58,21 @@
       "comment": "Un comment pour client modis",
       "id": 2
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "login": "User1",
+      "password": "User1",
+      "lastConexion": "2022-17-10",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "login": "User2",
+      "password": "User2",
+      "lastConexion": "2022-17-10",
+      "role": "USER"
+    }
   ]
 }
