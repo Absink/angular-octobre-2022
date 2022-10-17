@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { IconsModule } from '../icons/icons.module';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageLoginComponent } from './page-login/page-login.component';
 
 
 
@@ -11,7 +12,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   declarations: [
     NavbarComponent,
     PageHomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PageLoginComponent
   ],
   imports: [
     CommonModule,

@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthentGuard } from './core/authent.guard';
 import { PageHomeComponent } from './core/page-home/page-home.component';
+import { PageLoginComponent } from './core/page-login/page-login.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'home', component: PageHomeComponent },
-  { path: 'orders', loadChildren: () => import('./features/orders/orders.module').then(m => m.OrdersModule) },
-  { path: 'clients', loadChildren: () => import('./features/clients/clients.module').then(m => m.ClientsModule) },
-  // { path: 'orders', component: PageListOrdersComponent },
-  // { path: 'clients', component: PageListClientsComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'login', component: PageLoginComponent },
+  { path: 'home', canActivate:[AuthentGuard], component: PageHomeComponent },
+  { path: 'orders', canActivate:[AuthentGuard], loadChildren: () => import('./features/orders/orders.module').then(m => m.OrdersModule) },
+  { path: 'clients', canActivate:[AuthentGuard], loadChildren: () => import('./features/clients/clients.module').then(m => m.ClientsModule) },
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
 ];
 

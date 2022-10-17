@@ -10,6 +10,7 @@ export class PageListOrdersComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(sessionStorage.getItem('exemple'))
   }
 
 }
