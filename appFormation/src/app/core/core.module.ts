@@ -5,6 +5,7 @@ import { IconsModule } from '../icons/icons.module';
 import { PageHomeComponent } from './page-home/page-home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PageLoginComponent } from './page-login/page-login.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ import { PageLoginComponent } from './page-login/page-login.component';
   ],
   imports: [
     CommonModule,
-    IconsModule
+    IconsModule,
+    RouterModule
   ], exports: [
     NavbarComponent
   ]
