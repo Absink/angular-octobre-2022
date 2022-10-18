@@ -4,13 +4,15 @@ import { TableLightComponent } from './components/table-light/table-light.compon
 import { BtnComponent } from './components/btn/btn.component';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TotalPipe } from './pipes/total.pipe';
 
 
 
 @NgModule({
   declarations: [
     TableLightComponent,
-    BtnComponent
+    BtnComponent,
+    TotalPipe
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FontAwesomeModule
   ], exports: [
     TableLightComponent,
-    BtnComponent
+    BtnComponent,
+    TotalPipe
   ]
 })
 export class SharedModule { }
