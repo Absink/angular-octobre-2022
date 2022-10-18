@@ -7,16 +7,20 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TotalPipe } from './pipes/total.pipe';
 import { DaysPipe } from './pipes/days.pipe';
 import { ColorStateDirective } from './directives/color-state.directive';
+import { ColorDayDirective } from './directives/color-day.directive';
 
 
 
 @NgModule({
   declarations: [
-    TableLightComponent,
-    BtnComponent,
-    TotalPipe,
-    DaysPipe,
-    ColorStateDirective
+    // Components
+    TableLightComponent, BtnComponent,
+
+    // Pipes
+    TotalPipe, DaysPipe,
+
+    // Directives
+    ColorStateDirective, ColorDayDirective
   ],
   imports: [
     CommonModule,
@@ -27,7 +31,8 @@ import { ColorStateDirective } from './directives/color-state.directive';
     BtnComponent,
     TotalPipe,
     DaysPipe,
-    ColorStateDirective
+    ColorStateDirective,
+    ColorDayDirective
   ]
 })
 export class SharedModule { }
