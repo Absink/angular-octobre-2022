@@ -9,7 +9,7 @@
     <td>{{ o.totalTTC() | currency: 'EUR' }}</td> -->
     <td>{{ o | total | currency: 'EUR'}} </td>
     <td>{{ o | total: 'TTC' | currency: 'EUR'}} </td>
-    <td>{{ o.state }}</td>
+    <td [appColorState]="o.state">{{ o.state }}</td>
     <td>
       <app-btn [btn]="getButton(o.id!)">
         <fa-icon ico [icon]="getButton(o.id!).icon!"></fa-icon>

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TotalPipe } from './pipes/total.pipe';
 import { DaysPipe } from './pipes/days.pipe';
+import { ColorStateDirective } from './directives/color-state.directive';
 
 
 
@@ -14,7 +15,8 @@ import { DaysPipe } from './pipes/days.pipe';
     TableLightComponent,
     BtnComponent,
     TotalPipe,
-    DaysPipe
+    DaysPipe,
+    ColorStateDirective
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { DaysPipe } from './pipes/days.pipe';
     TableLightComponent,
     BtnComponent,
     TotalPipe,
-    DaysPipe
+    DaysPipe,
+    ColorStateDirective
   ]
 })
 export class SharedModule { }
