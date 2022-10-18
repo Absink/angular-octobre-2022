@@ -1,19 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Order } from '../../models/order.model';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-light',
   templateUrl: './table-light.component.html',
   styleUrls: ['./table-light.component.scss']
 })
-export class TableLightComponent implements OnInit {
+export class TableLightComponent {
 
-  @Input() listDatas!: Order[];
   @Input() headers!: string[];
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

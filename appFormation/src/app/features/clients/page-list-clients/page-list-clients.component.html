@@ -1,3 +1,11 @@
 <p>Clients liste</p>
-<p>{{ clients | json }}</p>
+<app-table-light [headers]="headers">
+  <tr tbody *ngFor="let o of clients">
+    <td>{{ o.id }}</td>
+    <td>{{ o.name }}</td>
+    <td>{{ o.ca }}</td>
+    <td>{{ o.tva }}</td>
+    <td>{{ o.state }}</td>
+  </tr>
+</app-table-light>
 <button type="button" class="btn btn-info" (click)="switch()">Filtre (by State)</button>

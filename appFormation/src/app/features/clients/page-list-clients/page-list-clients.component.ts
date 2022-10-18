@@ -12,6 +12,7 @@ export class PageListClientsComponent implements OnInit {
 
   public clients: Client[] = [];
   public displayFilter: boolean = false;
+  public headers: string[] = ['ID', 'Nom', "Chiffre d'affaire", 'TVA', 'Etat'];
 
   constructor(private clientsService: ClientsService) { }
 
