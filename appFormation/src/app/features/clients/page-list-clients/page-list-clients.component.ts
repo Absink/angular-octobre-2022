@@ -13,6 +13,7 @@ export class PageListClientsComponent implements OnInit {
   public clients: Client[] = [];
   public displayFilter: boolean = false;
   public headers: string[] = ['ID', 'Nom', "Chiffre d'affaire", 'TVA', 'Etat'];
+  public states = Object.values(StateClient);
 
   constructor(private clientsService: ClientsService) { }
 
@@ -26,5 +27,10 @@ export class PageListClientsComponent implements OnInit {
       this.clients = this.clients.filter(client => client.state == StateClient.Active);
     else
       this.clientsService.collection.subscribe(datas => this.clients = datas);
+  }
+
+  public changeState(cl: Client, event: any) {
+    this.clientsService.updateState(cl, event.target.value)
+      .subscribe(data => cl.state = data.state);
   }
 }

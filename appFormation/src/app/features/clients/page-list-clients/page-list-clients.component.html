@@ -1,11 +1,17 @@
 <p>Clients liste</p>
 <app-table-light [headers]="headers">
-  <tr tbody *ngFor="let o of clients">
-    <td>{{ o.id }}</td>
-    <td>{{ o.name }}</td>
-    <td>{{ o.ca }}</td>
-    <td>{{ o.tva }}</td>
-    <td>{{ o.state }}</td>
+  <tr tbody *ngFor="let c of clients">
+    <td>{{ c.id }}</td>
+    <td>{{ c.name }}</td>
+    <td>{{ c.ca | currency: 'EUR' }}</td>
+    <td>{{ c.tva/100 | percent }}</td>
+    <td [appColorState]="c.state">
+      <select (change)="changeState(c, $event)">
+        <option *ngFor="let s of states" [value]="s" [selected]="s === c.state">
+          {{ s }}
+        </option>
+      </select>
+    </td>
   </tr>
 </app-table-light>
 <button type="button" class="btn btn-info" (click)="switch()">Filtre (by State)</button>
