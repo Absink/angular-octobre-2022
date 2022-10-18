@@ -3,7 +3,7 @@
   <tr tbody *ngFor="let o of orders">
     <td>{{ o.id }}</td>
     <td>{{ o.tjmHT }}</td>
-    <td>{{ o.nbJours }}</td>
+    <td>{{ o.nbJours | days }}</td>
     <td>{{ o.tva }}</td>
     <!-- <td>{{ o.totalHT() | currency }}</td>
     <td>{{ o.totalTTC() | currency: 'EUR' }}</td> -->

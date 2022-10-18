@@ -5,6 +5,7 @@ import { BtnComponent } from './components/btn/btn.component';
 import { RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TotalPipe } from './pipes/total.pipe';
+import { DaysPipe } from './pipes/days.pipe';
 
 
 
@@ -12,7 +13,8 @@ import { TotalPipe } from './pipes/total.pipe';
   declarations: [
     TableLightComponent,
     BtnComponent,
-    TotalPipe
+    TotalPipe,
+    DaysPipe
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { TotalPipe } from './pipes/total.pipe';
   ], exports: [
     TableLightComponent,
     BtnComponent,
-    TotalPipe
+    TotalPipe,
+    DaysPipe
   ]
 })
 export class SharedModule { }
