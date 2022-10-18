@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let h of headers">{{ h }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of listDatas">
+      <td>{{ d.id }}</td>
+      <td>{{ d.tjmHT }}</td>
+      <td>{{ d.nbJours }}</td>
+      <td>{{ d.tva }}</td>
+      <td>{{ d.totalHT() }}</td>
+      <td>{{ d.totalTTC() }}</td>
+      <td>{{ d.state }}</td>
+    </tr>
+  </tbody>
+</table>

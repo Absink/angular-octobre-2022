@@ -10,6 +10,7 @@ import { OrdersService } from 'src/app/shared/services/orders.service';
 export class PageListOrdersComponent implements OnInit {
 
   public orders: Order[] = [];
+  public tabHeaders: string[] = ['ID', 'TJM', 'Jours', 'TVA', 'Total HT', 'Total TTC', 'Etat'];
 
   constructor(private orderService: OrdersService) { }
 
