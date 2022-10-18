@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { StateOrder } from 'src/app/shared/enums/state-order';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
 import { Order } from 'src/app/shared/models/order.model';
 import { OrdersService } from 'src/app/shared/services/orders.service';
@@ -16,6 +17,7 @@ export class PageListOrdersComponent implements OnInit {
   // public btnRoute: BtnI = { label: "Detail order1", route:'1' };
   // public btnHref: BtnI = { label: "Go google", href: 'http://www.google.fr' };
   // public btnAction: BtnI = { label: "show popup", action: true};
+  public states = Object.values(StateOrder);
 
   constructor(private orderService: OrdersService) { }
 
@@ -30,6 +32,11 @@ export class PageListOrdersComponent implements OnInit {
 
   public getButton(id: number): BtnI {
     return { label: "View", route: id.toString(), icon: faEye };
+  }
+
+  public changeState(order: Order, event: any) {
+    this.orderService.updateState(order, event.target.value)
+      .subscribe(data => order.state = data.state);
   }
 
 }
