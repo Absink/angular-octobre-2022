@@ -1,0 +1,14 @@
+a, button {
+  border: none;
+  margin-left: 10px;
+  color: #ffffff;
+  display: inline-block;
+  padding: 1em;
+  font-size: 1rem;
+  background: #70148b;
+  transition: all .5s;
+  &:hover {
+    text-decoration: none;
+    background: darken(#70148b, 10);
+  }
+}
