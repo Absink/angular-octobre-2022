@@ -14,16 +14,22 @@ export class OrdersService {
 
   constructor(private http: HttpClient) {
     this.collection = this.http.get<Order[]>(`${this.url}orders`).pipe(
-      map(datas => datas.map(objOrder => new Order(objOrder)))
+      map(datas => datas.map(objJSON => new Order(objJSON)))
     );
    }
 
-   get collection(): Observable<Order[]> {
+  get collection(): Observable<Order[]> {
     return this.pCollection;
   }
 
   set collection(col: Observable<Order[]>) {
     this.pCollection = col;
+  }
+
+  public getAll(): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.url}orders`).pipe(
+      map(datas => datas.map(objJSON => new Order(objJSON)))
+    );
   }
 
   public getById(orderId: number): Observable<Order> {
@@ -32,9 +38,9 @@ export class OrdersService {
     );
   }
 
-  public getById2(orderId: number): Observable<Order> {
-    return this.http.get<Order>(`${this.url}orders?id=${orderId}`).pipe(
-      map(datas => new Order(datas))
-    );
-  }
+  // public getById2(orderId: number): Observable<Order> {
+  //   return this.http.get<Order>(`${this.url}orders?id=${orderId}`).pipe(
+  //     map(datas => new Order(datas))
+  //   );
+  // }
 }

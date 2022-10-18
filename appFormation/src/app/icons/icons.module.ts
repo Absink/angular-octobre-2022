@@ -14,7 +14,8 @@ import { IconConnexionComponent } from './icon-connexion/icon-connexion.componen
   imports: [
     CommonModule,
     FontAwesomeModule
-  ], exports: [
+  ],
+  exports: [
     IconHomeComponent,
     IconConnexionComponent
   ]
