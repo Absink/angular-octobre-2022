@@ -5,6 +5,7 @@ import { OrdersRoutingModule } from './orders-routing.module';
 import { PageListOrdersComponent } from './page-list-orders/page-list-orders.component';
 import { PageDetailsOrderComponent } from './page-details-order/page-details-order.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     OrdersRoutingModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule
   ]
 })
 export class OrdersModule { }
