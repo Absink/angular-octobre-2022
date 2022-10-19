@@ -13,6 +13,8 @@ import { UsersService } from 'src/app/shared/services/users.service';
 export class PageLoginComponent implements OnInit {
 
   public user = new User();
+  public form!: FormGroup;
+  public btnLogin: BtnI = { label: "Se connecter", action: true };
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,8 +22,6 @@ export class PageLoginComponent implements OnInit {
     private router: Router
     ) { }
 
-  public form!: FormGroup;
-  public btnLogin: BtnI = { label: "Se connecter", action: true };
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({

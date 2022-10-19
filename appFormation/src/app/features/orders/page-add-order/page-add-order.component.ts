@@ -35,7 +35,7 @@ export class PageAddOrderComponent implements OnInit {
   }
 
   public add(order: Order): void {
-    if (!order)
+    if (!this.order)
       this.ordersService.add(order).subscribe(datas => {
         if (datas.id)
           this.router.navigateByUrl('/orders');
