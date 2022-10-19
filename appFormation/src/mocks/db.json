@@ -81,6 +81,20 @@
       "password": "User2",
       "lastConexion": "2022-10-18",
       "role": "USER"
+    },
+    {
+      "id": 3,
+      "login": "User3",
+      "password": "User3",
+      "lastConexion": "2022-02-02",
+      "role": "USER"
+    },
+    {
+      "id": 4,
+      "login": "User4",
+      "password": "User4",
+      "lastConexion": "2021-10-18",
+      "role": "USER"
     }
   ]
 }

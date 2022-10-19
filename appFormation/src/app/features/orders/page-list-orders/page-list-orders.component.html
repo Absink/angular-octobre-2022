@@ -1,5 +1,5 @@
 <p>Orders liste</p>
-<app-table-light [headers]="tabHeaders">
+<app-table-light *ngIf="ordersV2 | async as orders" [headers]="tabHeaders">
   <tr tbody *ngFor="let o of orders">
     <td>{{ o.id }}</td>
     <td>{{ o.tjmHT }}</td>

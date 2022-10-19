@@ -5,10 +5,11 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-    <a class="nav-link active" routerLink="/home" routerLinkActive="active">Home</a>
-    <a class="nav-link" routerLink="/orders" routerLinkActive="active">Orders</a>
-    <a class="nav-link" routerLink="/clients" routerLinkActive="active">Clients</a>
+    <div *ngIf="isConnected()" class="navbar-nav">
+      <a class="nav-link active" routerLink="/home" routerLinkActive="active">Home</a>
+      <a class="nav-link" routerLink="/orders" routerLinkActive="active">Orders</a>
+      <a class="nav-link" routerLink="/clients" routerLinkActive="active">Clients</a>
+      <a class="nav-link" routerLink="/settings" routerLinkActive="active">Users</a>
     </div>
   </div>
   <div>

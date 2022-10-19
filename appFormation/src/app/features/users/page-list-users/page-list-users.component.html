@@ -1,0 +1,22 @@
+<h1>Users liste</h1>
+<app-btn [btn]="btnSwitch" (clicked)="switchView()"></app-btn>
+
+<!-- Table View -->
+<app-table-light *ngIf="!viewCard" [headers]="tabHeaders">
+  <tr tbody [appUserConnected]="u.id!" *ngFor="let u of users">
+    <td>{{ u.id }}</td>
+    <td>{{ u.login }}</td>
+    <td>{{ u.lastConexion | date }}</td>
+    <td>{{ u.role }} </td>
+  </tr>
+</app-table-light>
+
+<!-- Card View -->
+<div *ngIf="viewCard" class="row">
+  <div class="col-4 marg" *ngFor="let u of users">
+    <app-card-light
+      [title]="u.login!"
+      [subtitle]="u.role!">
+    </app-card-light>
+  </div>
+</div>

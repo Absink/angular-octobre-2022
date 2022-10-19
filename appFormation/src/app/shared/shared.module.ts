@@ -8,19 +8,21 @@ import { TotalPipe } from './pipes/total.pipe';
 import { DaysPipe } from './pipes/days.pipe';
 import { ColorStateDirective } from './directives/color-state.directive';
 import { ColorDayDirective } from './directives/color-day.directive';
+import { UserConnectedDirective } from './directives/user-connected.directive';
+import { CardLightComponent } from './components/card-light/card-light.component';
 
 
 
 @NgModule({
   declarations: [
     // Components
-    TableLightComponent, BtnComponent,
+    TableLightComponent, BtnComponent, CardLightComponent,
 
     // Pipes
     TotalPipe, DaysPipe,
 
     // Directives
-    ColorStateDirective, ColorDayDirective
+    ColorStateDirective, ColorDayDirective, UserConnectedDirective
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,9 @@ import { ColorDayDirective } from './directives/color-day.directive';
     TotalPipe,
     DaysPipe,
     ColorStateDirective,
-    ColorDayDirective
+    ColorDayDirective,
+    UserConnectedDirective,
+    CardLightComponent
   ]
 })
 export class SharedModule { }
