@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faEdit, faEye } from '@fortawesome/free-solid-svg-icons';
+import { faDeleteLeft, faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
@@ -38,6 +38,7 @@ export class PageListOrdersComponent implements OnInit {
     switch(choice) {
       case 1: return { label: "View", route: `view/${id.toString()}`, icon: faEye };
       case 2: return { label: "Edit", route: `edit/${id.toString()}`, icon: faEdit };
+      case 3: return { label: "Delete", action: true, icon: faTrash };
     }
     return null;
   }
@@ -45,6 +46,10 @@ export class PageListOrdersComponent implements OnInit {
   public changeState(order: Order, event: any) {
     this.orderService.updateState(order, event.target.value)
       .subscribe(data => order.state = data.state);
+  }
+
+  public remove(id: number): void {
+    this.orderService.delete(id).subscribe( () => this.orders = this.orders.filter(o => o.id != id));
   }
 
 }

@@ -1,6 +1,6 @@
 <p>Orders liste</p>
 <div *ngIf="orders">
-  <app-table-light *ngIf="ordersV2 | async as orders" [headers]="tabHeaders">
+  <app-table-light [headers]="tabHeaders">
     <tr tbody *ngFor="let o of orders">
       <td>{{ o.id }}</td>
       <td>{{ o.tjmHT }}</td>
@@ -28,6 +28,9 @@
         </app-btn>
         <app-btn [btn]="getButton(o.id!, 2)!">
           <fa-icon ico [icon]="getButton(o.id!, 2)!.icon!"></fa-icon>
+        </app-btn>
+        <app-btn [btn]="getButton(o.id!, 3)!" (clicked)="remove(o.id!)">
+          <fa-icon ico3 [icon]="getButton(o.id!, 3)!.icon!"></fa-icon>
         </app-btn>
       </td>
     </tr>

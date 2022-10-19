@@ -29,20 +29,17 @@ export class OrdersService {
 
   public getAll(): Observable<Order[]> {
     return this.http.get<Order[]>(`${this.url}orders`).pipe(
-      map(datas => datas.map(objJSON => new Order(objJSON)))
-    );
+      map(datas => datas.map(objJSON => new Order(objJSON))));
   }
 
   public getById(orderId: number): Observable<Order> {
     return this.http.get<Order>(`${this.url}orders/${orderId}`).pipe(
-      map(datas => new Order(datas))
-    );
+      map(datas => new Order(datas)));
   }
 
   public update(order: Order): Observable<Order> {
     return this.http.put<Order>(`${this.url}orders/${order.id}`, order).pipe(
-      map(datas => new Order(datas))
-    );
+      map(datas => new Order(datas)));
   }
 
   public updateState(order: Order, state: StateOrder): Observable<Order> {
@@ -53,13 +50,10 @@ export class OrdersService {
 
   public add(order: Order): Observable<Order> {
     return this.http.post<Order>(`${this.url}orders`, order).pipe(
-      map(datas => new Order(datas))
-    );
+      map(datas => new Order(datas)));
   }
 
-  // public getById2(orderId: number): Observable<Order> {
-  //   return this.http.get<Order>(`${this.url}orders?id=${orderId}`).pipe(
-  //     map(datas => new Order(datas))
-  //   );
-  // }
+  public delete(id: number): Observable<Order> {
+    return this.http.delete<Order>(`${this.url}orders/${id}`);
+  }
 }

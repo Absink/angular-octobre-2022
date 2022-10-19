@@ -1,5 +1,5 @@
 <a *ngIf="btn.route" [routerLink]="btn.route">
   <ng-content select="[ico]"></ng-content>
 {{ btn.label }}</a>
-<a *ngIf="btn.href" [href]="btn.href">{{ btn.label }}</a>
-<button *ngIf="btn.action" (click)="doAction()">{{ btn.label }}</button>
+<a *ngIf="btn.href" [href]="btn.href"><ng-content select="[ico2]"></ng-content>{{ btn.label }}</a>
+<button *ngIf="btn.action" (click)="doAction()"><ng-content select="[ico3]"></ng-content>{{ btn.label }}</button>
