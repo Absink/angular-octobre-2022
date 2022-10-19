@@ -17,6 +17,7 @@ export class PageListOrdersComponent implements OnInit {
   // public btnRoute: BtnI = { label: "Detail order1", route:'1' };
   // public btnHref: BtnI = { label: "Go google", href: 'http://www.google.fr' };
   // public btnAction: BtnI = { label: "show popup", action: true};
+  public btnAdd: BtnI = { label: "Add", route: 'add' };
   public states = Object.values(StateOrder);
 
   constructor(private orderService: OrdersService) { }
@@ -31,7 +32,7 @@ export class PageListOrdersComponent implements OnInit {
   }
 
   public getButton(id: number): BtnI {
-    return { label: "View", route: id.toString(), icon: faEye };
+    return { label: "View", route: `view/${id.toString()}`, icon: faEye };
   }
 
   public changeState(order: Order, event: any) {

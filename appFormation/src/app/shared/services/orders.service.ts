@@ -51,6 +51,12 @@ export class OrdersService {
     return this.update(obj);
   }
 
+  public add(order: Order): Observable<Order> {
+    return this.http.post<Order>(`${this.url}orders`, order).pipe(
+      map(datas => new Order(datas))
+    );
+  }
+
   // public getById2(orderId: number): Observable<Order> {
   //   return this.http.get<Order>(`${this.url}orders?id=${orderId}`).pipe(
   //     map(datas => new Order(datas))
