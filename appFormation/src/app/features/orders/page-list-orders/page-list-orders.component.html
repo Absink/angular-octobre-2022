@@ -3,6 +3,7 @@
   <app-table-light [headers]="tabHeaders">
     <tr tbody *ngFor="let o of orders">
       <td>{{ o.id }}</td>
+      <td>{{ o.clientId }}</td>
       <td>{{ o.tjmHT }}</td>
       <td [appColorDay]="o.nbJours">{{ o.nbJours | days }}</td>
       <td>{{ o.tva }}</td>

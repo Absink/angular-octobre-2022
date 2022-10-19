@@ -7,6 +7,7 @@
       "state": "OPTION",
       "typePresta": "Formation",
       "client": "M2i",
+      "clientId": 1,
       "comment": "merci m2i",
       "id": 1
     },
@@ -17,6 +18,7 @@
       "state": "CONFIRMED",
       "typePresta": "Formation",
       "client": "Modis",
+      "clientId": 1,
       "comment": "merci modis",
       "id": 2
     },
@@ -27,6 +29,7 @@
       "state": "CANCEL",
       "typePresta": "Formation",
       "client": "nemesys",
+      "clientId": 2,
       "comment": "",
       "id": 3
     },
@@ -37,6 +40,7 @@
       "state": "OPTION",
       "typePresta": "Formation",
       "client": "Atos",
+      "clientId": 3,
       "comment": "Comment pour Atos",
       "id": 4
     }

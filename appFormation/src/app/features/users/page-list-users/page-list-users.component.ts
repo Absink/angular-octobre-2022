@@ -15,6 +15,7 @@ export class PageListUsersComponent implements OnInit {
   public users: User[] = [];
   public tabHeaders: string[] = ['ID', 'Login', 'Der. Connexion', 'Role'];
   public btnSwitch: BtnI = { label: 'Switch', action: true };
+  public btnAdd: BtnI = { label: 'Add', route: 'add' };
   public viewCard: boolean = false;
 
   constructor(private usersService: UsersService) { }

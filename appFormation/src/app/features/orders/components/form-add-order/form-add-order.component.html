@@ -16,6 +16,13 @@
     </div>
 
     <div class="form-group">
+      <label for="clientId">Client (ID)</label>
+      <select formControlName="clientId" class="form-control" id="clientId">
+        <option *ngFor="let c of clients" [ngValue]="c.id" [selected]="c.id === order.clientId">{{ c.name }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
       <label for="nbJours">Nombre jours</label>
       <input formControlName="nbJours" type="number" class="form-control" id="nbJours">
     </div>

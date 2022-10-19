@@ -1,5 +1,6 @@
 <h1>Users liste</h1>
 <app-btn [btn]="btnSwitch" (clicked)="switchView()"></app-btn>
+<app-btn [btn]="btnAdd"></app-btn>
 
 <!-- Table View -->
 <app-table-light *ngIf="!viewCard" [headers]="tabHeaders">
@@ -20,3 +21,4 @@
     </app-card-light>
   </div>
 </div>
+

@@ -8,6 +8,7 @@ export interface OrderI {
   state: StateOrder;
   typePresta: string | undefined;
   client: string | undefined;
+  clientId: number | undefined;
   comment: string | undefined;
 
   totalHT(): number;

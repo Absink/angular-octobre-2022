@@ -9,6 +9,7 @@ export class Order implements OrderI {
   state: StateOrder = StateOrder.OPTION;
   typePresta: string | undefined;
   client: string | undefined;
+  clientId: number | undefined;
   comment: string | undefined;
 
   totalHT(): number {

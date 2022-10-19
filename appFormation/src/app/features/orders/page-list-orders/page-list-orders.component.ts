@@ -15,7 +15,7 @@ export class PageListOrdersComponent implements OnInit {
 
   public orders: Order[] = [];
   public ordersV2!: Observable<Order[]>;
-  public tabHeaders: string[] = ['ID', 'TJM', 'Jours', 'TVA', 'Total HT', 'Total TTC', 'Etat', 'Actions'];
+  public tabHeaders: string[] = ['ID', 'Client', 'TJM', 'Jours', 'TVA', 'Total HT', 'Total TTC', 'Etat', 'Actions'];
   // public btnRoute: BtnI = { label: "Detail order1", route:'1' };
   // public btnHref: BtnI = { label: "Go google", href: 'http://www.google.fr' };
   // public btnAction: BtnI = { label: "show popup", action: true};
