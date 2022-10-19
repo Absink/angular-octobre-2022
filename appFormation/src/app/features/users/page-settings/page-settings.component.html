@@ -1,0 +1,7 @@
+<div *ngIf="user">
+  <h1>Informations personnelles</h1>
+  <p>ID: {{ user.id }}</p>
+  <p>Login: {{ user.login }}</p>
+  <p>Role: {{ user.role }}</p>
+  <p>Dern. Connexion: {{ user.lastConexion | date}}</p>
+</div>

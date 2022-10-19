@@ -12,4 +12,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public isConnected(): boolean {
+    if (sessionStorage.getItem('userId')) return true
+    return false
+  }
+
 }

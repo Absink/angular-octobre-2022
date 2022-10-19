@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 const routes: Routes = [
   { path: 'login', component: PageLoginComponent },
   { path: 'home', canActivate:[AuthentGuard], component: PageHomeComponent },
+  { path: 'settings', canActivate:[AuthentGuard], loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule) },
   { path: 'orders', canActivate:[AuthentGuard], loadChildren: () => import('./features/orders/orders.module').then(m => m.OrdersModule) },
   { path: 'clients', canActivate:[AuthentGuard], loadChildren: () => import('./features/clients/clients.module').then(m => m.ClientsModule) },
   { path: '', redirectTo: '/login', pathMatch: 'full'},

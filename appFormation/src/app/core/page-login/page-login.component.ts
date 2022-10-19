@@ -12,8 +12,8 @@ export class PageLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public login(): void {
-    sessionStorage.setItem('userId', '1');
+  public login(id: number): void {
+    sessionStorage.setItem('userId', id.toString());
   }
 
 }

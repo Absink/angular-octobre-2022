@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { IconHomeComponent } from './icon-home/icon-home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IconConnexionComponent } from './icon-connexion/icon-connexion.component';
+import { IconSettingsComponent } from './icon-settings/icon-settings.component';
 
 
 
 @NgModule({
   declarations: [
     IconHomeComponent,
-    IconConnexionComponent
+    IconConnexionComponent,
+    IconSettingsComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { IconConnexionComponent } from './icon-connexion/icon-connexion.componen
   ],
   exports: [
     IconHomeComponent,
-    IconConnexionComponent
+    IconConnexionComponent,
+    IconSettingsComponent
   ]
 })
 export class IconsModule { }
