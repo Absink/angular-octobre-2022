@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faEye } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
@@ -34,8 +34,12 @@ export class PageListOrdersComponent implements OnInit {
     console.log("test !");
   }
 
-  public getButton(id: number): BtnI {
-    return { label: "View", route: `view/${id.toString()}`, icon: faEye };
+  public getButton(id: number, choice: number): BtnI | null {
+    switch(choice) {
+      case 1: return { label: "View", route: `view/${id.toString()}`, icon: faEye };
+      case 2: return { label: "Edit", route: `edit/${id.toString()}`, icon: faEdit };
+    }
+    return null;
   }
 
   public changeState(order: Order, event: any) {

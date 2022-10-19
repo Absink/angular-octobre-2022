@@ -40,7 +40,6 @@ export class OrdersService {
   }
 
   public update(order: Order): Observable<Order> {
-    console.log(order.id)
     return this.http.put<Order>(`${this.url}orders/${order.id}`, order).pipe(
       map(datas => new Order(datas))
     );
