@@ -1,2 +1,2 @@
-<app-form-add-order (clicked)="add($event)"></app-form-add-order>
+<app-form-add-order *ngIf="loadingFinished" [order]="order" (clicked)="add($event)"></app-form-add-order>
 <p *ngIf="error">{{ error }}</p>

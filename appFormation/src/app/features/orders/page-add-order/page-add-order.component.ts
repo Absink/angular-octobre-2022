@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Order } from 'src/app/shared/models/order.model';
 import { OrdersService } from 'src/app/shared/services/orders.service';
 
@@ -10,19 +10,44 @@ import { OrdersService } from 'src/app/shared/services/orders.service';
 })
 export class PageAddOrderComponent implements OnInit {
 
+  public order!: Order;
   public error!: string
+  public loadingFinished: boolean = false;
+  public idOrder!: number;
 
-  constructor(private ordersService: OrdersService, private router: Router) { }
+  constructor(
+    private ordersService: OrdersService,
+    private router: Router,
+    private route: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
+    if (this.route.snapshot.paramMap.get('id')) {
+      this.idOrder = Number(this.route.snapshot.paramMap.get('id'))
+      this.ordersService.getById(this.idOrder)
+        .subscribe(data => {
+          this.order = data;
+          this.loadingFinished = true;
+         }
+        );
+    } else
+      this.loadingFinished = true;
   }
 
   public add(order: Order): void {
-    this.ordersService.add(order).subscribe(datas => {
-      console.log(datas);
-      if (datas.id)
-        this.router.navigateByUrl('/orders');
-    });
+    if (!order)
+      this.ordersService.add(order).subscribe(datas => {
+        if (datas.id)
+          this.router.navigateByUrl('/orders');
+      });
+    else {
+      order.id = this.idOrder;
+      this.ordersService.update(order).subscribe(datas => {
+        if (datas.id)
+          this.router.navigateByUrl('/orders');
+      });
+    }
+
   }
 
 }

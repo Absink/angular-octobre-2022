@@ -27,8 +27,8 @@ export class UsersService {
   }
 
   public login(login: string, pass: string): Observable<User> {
-    return this.http.get<User>(`${this.url}users?login=${login}&password=${pass}`).pipe(
-      map(user => new User(user))
+    return this.http.get<User[]>(`${this.url}users?login=${login}&password=${pass}`).pipe(
+      map(user => new User(user[0]))
     );
   }
 }

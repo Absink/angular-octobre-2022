@@ -21,6 +21,7 @@ export class FormAddOrderComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    console.log(this.order)
     this.form = this.formBuilder.group({
       typePresta: [this.order.typePresta, Validators.required],
       client: [this.order.client, Validators.compose([Validators.required, Validators.minLength(5)])],

@@ -6,6 +6,8 @@ import { PageHomeComponent } from './page-home/page-home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { PageLoginComponent } from './page-login/page-login.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -19,7 +21,9 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     IconsModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule,
+    SharedModule
   ], exports: [
     NavbarComponent
   ]

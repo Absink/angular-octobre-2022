@@ -7,6 +7,7 @@ import { PageListOrdersComponent } from './page-list-orders/page-list-orders.com
 const routes: Routes = [
   { path: '', component: PageListOrdersComponent },
   { path: 'view/:id', component: PageDetailsOrderComponent },
+  { path: 'edit/:id', component: PageAddOrderComponent },
   { path: 'add', component: PageAddOrderComponent }
 ];
 
